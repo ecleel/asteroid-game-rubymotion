@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class GameLayer - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/game_layer.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Joybox::Core::Layer
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-check_for_collisions">#check_for_collisions</a>
+    
+    <li ><a href="#method-i-launch_asteroids">#launch_asteroids</a>
+    
+    <li ><a href="#method-i-on_enter">#on_enter</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./build/iPhoneSimulator-6_1-Development/asteroids_app/PkgInfo.html">PkgInfo</a>
+  
+    <li class="file"><a href="./build/iPhoneSimulator-6_1-Development/asteroids_dSYM/Contents/Info_plist.html">Info.plist</a>
+  
+    <li class="file"><a href="./build/iPhoneSimulator-6_1-Development/objs/init_mm.html">init.mm</a>
+  
+    <li class="file"><a href="./build/iPhoneSimulator-6_1-Development/objs/main_mm.html">main.mm</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AppDelegate.html">AppDelegate</a>
+  
+    <li><a href="./AsteroidSprite.html">AsteroidSprite</a>
+  
+    <li><a href="./GameLayer.html">GameLayer</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class GameLayer</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="MaximumAsteroids">MaximumAsteroids
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check_for_collisions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_for_collisions</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_for_collisions-source">
+            <pre><span class="ruby-comment"># File app/game_layer.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_for_collisions</span>
+  <span class="ruby-ivar">@asteroids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">asteroid</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">CGRectIntersectsRect</span>(<span class="ruby-identifier">asteroid</span>.<span class="ruby-identifier">bounding_box</span>, <span class="ruby-ivar">@rocket</span>.<span class="ruby-identifier">bounding_box</span>)
+      <span class="ruby-ivar">@asteroids</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:stop_all_actions</span>)
+      <span class="ruby-ivar">@rocket</span>[<span class="ruby-value">:alive</span>] = <span class="ruby-keyword">false</span>
+      <span class="ruby-ivar">@rocket</span>.<span class="ruby-identifier">run_action</span> <span class="ruby-constant">Blink</span>.<span class="ruby-identifier">with</span> <span class="ruby-identifier">times</span><span class="ruby-operator">:</span> <span class="ruby-value">20</span>, <span class="ruby-identifier">duration</span><span class="ruby-operator">:</span> <span class="ruby-value">3.0</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_for_collisions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_for_collisions-method -->
+
+    
+      <div id="method-i-launch_asteroids" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">launch_asteroids</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="launch_asteroids-source">
+            <pre><span class="ruby-comment"># File app/game_layer.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">launch_asteroids</span>
+  <span class="ruby-ivar">@asteroids</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@asteroids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">MaximumAsteroids</span>
+    <span class="ruby-identifier">missing_asteroids</span> = <span class="ruby-constant">MaximumAsteroids</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@asteroids</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">missing_asteroids</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">asteroid</span> = <span class="ruby-constant">AsteroidSprite</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">move_action</span> = <span class="ruby-constant">Move</span>.<span class="ruby-identifier">to</span> <span class="ruby-identifier">position</span><span class="ruby-operator">:</span> <span class="ruby-identifier">asteroid</span>.<span class="ruby-identifier">end_position</span>, <span class="ruby-identifier">duration</span><span class="ruby-operator">:</span> <span class="ruby-value">4.0</span>
+      <span class="ruby-identifier">callback_action</span> = <span class="ruby-constant">Callback</span>.<span class="ruby-identifier">with</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">asteroid</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@asteroids</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">asteroid</span> }
+      <span class="ruby-identifier">asteroid</span>.<span class="ruby-identifier">run_action</span> <span class="ruby-constant">Sequence</span>.<span class="ruby-identifier">with</span> <span class="ruby-identifier">actions</span><span class="ruby-operator">:</span> [<span class="ruby-identifier">move_action</span>, <span class="ruby-identifier">callback_action</span>]
+      
+      <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">asteroid</span>
+      <span class="ruby-ivar">@asteroids</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">asteroid</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- launch_asteroids-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- launch_asteroids-method -->
+
+    
+      <div id="method-i-on_enter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_enter</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_enter-source">
+            <pre><span class="ruby-comment"># File app/game_layer.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_enter</span>
+  <span class="ruby-identifier">background</span> = <span class="ruby-constant">Sprite</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">file_name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;background.png&#39;</span>, <span class="ruby-identifier">position</span><span class="ruby-operator">:</span> <span class="ruby-constant">Screen</span>.<span class="ruby-identifier">center</span>
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">background</span>
+  
+  <span class="ruby-ivar">@rocket</span> = <span class="ruby-constant">Sprite</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">file_name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;rocket.png&#39;</span>, <span class="ruby-identifier">position</span><span class="ruby-operator">:</span> <span class="ruby-constant">Screen</span>.<span class="ruby-identifier">center</span>, <span class="ruby-identifier">alive</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@rocket</span>
+  
+  <span class="ruby-identifier">on_touches_began</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">touches</span>, <span class="ruby-identifier">event</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">touch</span> = <span class="ruby-identifier">touches</span>.<span class="ruby-identifier">any_object</span>
+    <span class="ruby-ivar">@rocket</span>.<span class="ruby-identifier">run_action</span> <span class="ruby-constant">Move</span>.<span class="ruby-identifier">to</span> <span class="ruby-identifier">position</span><span class="ruby-operator">:</span> <span class="ruby-identifier">touch</span>.<span class="ruby-identifier">location</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">schedule_update</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dt</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">launch_asteroids</span>
+    <span class="ruby-identifier">check_for_collisions</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rocket</span>[<span class="ruby-value">:alive</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_enter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_enter-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
